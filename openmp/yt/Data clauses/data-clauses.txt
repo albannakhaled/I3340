@@ -1,0 +1,20 @@
+firstprivate(list) <-- private copies of a variable are initialized with the value of the original variable
+lastprivate(list) <-- lastprivate is used to assign the value of the last iteration to the original variable
+threadprivate(list) <-- threadprivate is used to declare a variable as private to each thread
+copyin(list) <-- copyin is used to copy the value of a variable from the master thread to the private copy of the variable in each thread
+reduction(operator: list) <-- reduction is used to perform a reduction operation on a list of variables across all threads
+shared(list) <-- shared is used to declare a variable as shared among all threads
+private(list) <-- private is used to declare a variable as private to each thread
+default(shared | none) <-- default is used to specify the default data scope for variables in a parallel region
+schedule(kind[, chunk_size]) <-- schedule is used to specify the scheduling policy for distributing loop iterations among threads
+collapse(n) <-- collapse is used to combine n nested loops into a single loop
+ordered <-- ordered is used to enforce the order of execution of the iterations of a loop
+nowait <-- nowait is used to indicate that the threads do not need to synchronize at the end of a parallel region
+master <-- master is used to specify a block of code that is executed only by the master thread
+
+
+worksharing constructs:
+ loop construct
+    sections construct
+    single construct
+    workshare construct

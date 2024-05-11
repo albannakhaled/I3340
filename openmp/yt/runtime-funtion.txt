@@ -1,0 +1,5 @@
+Run Time function:
+ omp_set_num_threads(n); <-- set the desired number of threads
+ omp_get_num_threads(); <-- return the current number of threads
+ omp_get_thread_num(); <-- return the current thread number
+ omp_in_parallel(); <-- return 1 if in parallel region, 0 otherwise

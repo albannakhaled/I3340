@@ -1,0 +1,36 @@
+* work sharing 
+    section
+    single
+    workshare
+* Data clauses
+    default
+    shared
+    private
+    lastprivate
+    firstprivate
+    threadprivate
+    copyin
+    copyprivate
+    reduction
+
+
+* what is openmp?
+
+openmp in an api for shared memory parallel computing
+
+
+
+syncronization
+    * barrier
+    * critical
+    * atomic
+    * ordered
+    * flush
+    * master
+    * single
+    * sections
+    * task
+    * taskwait
+    * taskgroup
+    * threadprivate
+    * threadlocal

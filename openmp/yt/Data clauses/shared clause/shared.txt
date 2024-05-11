@@ -1,0 +1,36 @@
+In OpenMP, a shared variable is a variable that can be accessed and modified by multiple threads within a parallel region. By default, all variables in OpenMP are shared, unless explicitly declared as private.
+
+Here's an example of a shared variable in OpenMP:
+
+```c
+#include <omp.h>
+#include <stdio.h>
+
+int main() {
+    int sum = 0; // This is a shared variable
+
+    #pragma omp parallel for reduction(+:sum)
+    for (int i = 0; i < 100; i++) {
+        sum += i;
+    }
+
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+```
+
+In this example, the variable `sum` is a shared variable. All threads in the parallel region have access to the same instance of `sum`, and they can read and modify its value. The `reduction(+:sum)` clause ensures that the final value of `sum` is the sum of all partial sums computed by each thread.
+
+Shared variables should be used when you need to share data between threads or when you need to accumulate results from multiple threads into a single variable. However, it's important to be careful when modifying shared variables from multiple threads simultaneously, as this can lead to race conditions and incorrect results. In such cases, you should use synchronization mechanisms like critical sections, locks, or atomic operations to ensure thread-safe access to shared variables.
+
+Some common use cases for shared variables include:
+
+1. **Accumulating results**: As shown in the example above, shared variables can be used to accumulate partial results from multiple threads into a single variable.
+
+2. **Sharing input data**: If you have input data that needs to be accessed by all threads, you can declare it as a shared variable.
+
+3. **Global variables**: Global variables are implicitly shared by all threads, so they can be accessed and modified within parallel regions.
+
+4. **Shared data structures**: If you have data structures that need to be accessed and modified by multiple threads, you can declare them as shared variables, but you'll need to use synchronization mechanisms to ensure thread-safe access.
+
+In general, it's a good practice to minimize the use of shared variables and to prefer thread-private variables whenever possible, as this can reduce the need for synchronization and improve performance. However, shared variables are necessary when you need to share data or coordinate between threads.
