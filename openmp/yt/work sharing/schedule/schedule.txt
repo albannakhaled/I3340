@@ -1,0 +1,3 @@
+For example, if you have a loop with 100 iterations and you specify a schedule(static, 10)
+ clause, it means that the loop iterations will be divided statically among the threads, 
+ with each thread handling 10 iterations at a time.
