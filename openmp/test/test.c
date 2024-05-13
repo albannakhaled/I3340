@@ -1,13 +1,17 @@
-#include <omp.h>
 #include <stdio.h>
-
-#define N 1000000
-
-int main() {
-    int tid ;
-    
-    #pragma omp for
-    for(int i = 1 ; i < 10 ; i++){
-        printf("thread num %d print %d\n",omp_get_thread_num(),i);
+#define MAX 20
+int main()
+{
+    int tab[100000] ;
+    for (int i = 0; i < 100000; i++)
+    {
+        tab[i] = i % 7;
     }
+    for (int i = 0; i < 100000; i++)
+    {
+        printf("%d\n",tab[i]);
+    }
+    
+    
+    return 0;
 }

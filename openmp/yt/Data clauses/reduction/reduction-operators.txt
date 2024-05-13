@@ -1,0 +1,4 @@
+#pragma omp parallel for reduction(+:sum)
+#pragma omp parallel for reduction(*:product)
+#pragma omp parallel for reduction(min:min_value)
+#pragma omp parallel for reduction(max:max_value)
