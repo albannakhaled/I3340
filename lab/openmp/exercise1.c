@@ -3,7 +3,7 @@
 
 int main()
 {
-    size_t nb_steps = 1000000000;
+    size_t nb_steps = 1000000;
     double pi, term;
     double sum = 0.;
     double step = 1. / (double)nb_steps;

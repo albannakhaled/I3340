@@ -8,7 +8,7 @@ int i,sum = 0;
     #pragma omp for reduction(+:sum) nowait
     for (i = 0; i < 1000; i++) {
         sum = sum + i;
-}
+    }
 printf("%d\n", sum); // sum is indeterminate here
 }
 return 0;
